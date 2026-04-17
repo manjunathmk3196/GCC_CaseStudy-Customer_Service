@@ -1,18 +1,16 @@
 package com.example.customer.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.*;
 
-@Entity
+@Document
 @Getter @Setter
 public class Customer {
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id;
 
     private String email;
-    private String name;
-    private String address;
+    private String first_name;
+    private String last_name;
 }

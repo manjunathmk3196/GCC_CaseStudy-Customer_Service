@@ -17,7 +17,7 @@ public class CustomerService {
         return repository.findAll();
     }
 
-    public Customer getById(Long id) {
+    public Customer getById(String id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Customer not found: " + id));
     }
@@ -26,18 +26,18 @@ public class CustomerService {
         return repository.save(customer);
     }
 
-    public Customer update(Long id, Customer request) {
+    public Customer update(String id, Customer request) {
 
         Customer existing = getById(id);
 
         existing.setEmail(request.getEmail());
-        existing.setName(request.getName());
-        existing.setAddress(request.getAddress());
+        existing.setFirst_name(request.getFirst_name());
+        existing.setLast_name(request.getLast_name());
 
         return repository.save(existing);
     }
 
-    public void delete(Long id) {
+    public void delete(String id) {
         repository.deleteById(id);
     }
 }

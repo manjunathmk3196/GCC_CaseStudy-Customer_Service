@@ -1,6 +1,14 @@
 spring:
   application:
     name: customer-service
+  mongodb:
+    database: customerdb
+    host: localhost
+    port: 27017
 
 server:
   port: 8082
+
+eureka:
+  client:
+    enabled: false
