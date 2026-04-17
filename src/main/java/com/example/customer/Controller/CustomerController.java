@@ -20,6 +20,7 @@ public class CustomerController {
         return service.getAll();
     }
 
+    //get
     @GetMapping("/{id}")
     public Customer getById(@PathVariable Long id) {
         return service.getById(id);
